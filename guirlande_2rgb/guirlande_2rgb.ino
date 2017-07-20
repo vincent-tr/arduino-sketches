@@ -18,8 +18,11 @@ void setup() {
   AH_DEBUG_INIT();
 
   Runtime::setName("Guirlande");
+
+  Runtime::registerService(new DispatcherService());
   Runtime::registerService(new ConfigurationService());
-  Runtime::registerService(new WifiService(80, CONFIG_PIN));
+  Runtime::registerService(new WifiSetupService(CONFIG_PIN));
+  Runtime::registerService(new HttpService());
   Runtime::registerService(new InfoService());
   Runtime::registerService(new RGBService(RGB1_RED_PIN, RGB1_GREEN_PIN, RGB1_BLUE_PIN, "rgb1"));
   Runtime::registerService(new RGBService(RGB2_RED_PIN, RGB2_GREEN_PIN, RGB2_BLUE_PIN, "rgb2"));

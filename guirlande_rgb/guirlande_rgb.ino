@@ -15,11 +15,14 @@ void setup() {
   AH_DEBUG_INIT();
 
   Runtime::setName("Guirlande");
+
+  Runtime::registerService(new DispatcherService());
   Runtime::registerService(new ConfigurationService());
-  Runtime::registerService(new WifiService(80, CONFIG_PIN));
+  Runtime::registerService(new WifiSetupService(CONFIG_PIN));
+  Runtime::registerService(new HttpService());
   Runtime::registerService(new InfoService());
   Runtime::registerService(new RGBService(RED_PIN, GREEN_PIN, BLUE_PIN));
-  
+
   Runtime::setup();
 }
 
