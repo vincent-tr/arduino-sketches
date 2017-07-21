@@ -20,6 +20,7 @@ void setup() {
   Runtime::registerService(new ConfigurationService());
   Runtime::registerService(new WifiSetupService(CONFIG_PIN));
   Runtime::registerService(new HttpService());
+  Runtime::registerService(new IrcService(nullptr, "#test", "rpi2-devel.mti-team2.dyndns.org"));
   Runtime::registerService(new InfoService());
   Runtime::registerService(new RGBService(RED_PIN, GREEN_PIN, BLUE_PIN));
 
