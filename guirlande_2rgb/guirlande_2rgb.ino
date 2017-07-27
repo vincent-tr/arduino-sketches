@@ -23,7 +23,7 @@ void setup() {
   Runtime::registerService(new ConfigurationService());
   Runtime::registerService(new WifiSetupService(CONFIG_PIN));
   Runtime::registerService(new HttpService());
-  Runtime::registerService(new IrcService(nullptr, "#arduino-home", "rpi2-devel.mti-team2.dyndns.org"));
+  Runtime::registerService(new IrcService(nullptr, "#arduino-home", "rpi2-devel.mti-team2.dyndns.org")); // hub-irc.home.mti-team2.dyndns.org
   Runtime::registerService(new InfoService());
   Runtime::registerService(new RGBService(RGB1_RED_PIN, RGB1_GREEN_PIN, RGB1_BLUE_PIN, "rgb1"));
   Runtime::registerService(new RGBService(RGB2_RED_PIN, RGB2_GREEN_PIN, RGB2_BLUE_PIN, "rgb2"));
