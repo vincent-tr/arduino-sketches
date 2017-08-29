@@ -14,7 +14,7 @@
 void setup() {
   AH_DEBUG_INIT();
 
-  Runtime::setName("Guirlande");
+  Runtime::setName("ard-home");
 
   Runtime::registerService(new DispatcherService());
   Runtime::registerService(new ConfigurationService());
