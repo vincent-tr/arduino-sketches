@@ -1,7 +1,3 @@
-#include <ESP8266WiFi.h>          // https://github.com/esp8266/Arduino
-#include <EEPROM.h>
-#include <ESP8266WebServer.h>
-#include <DNSServer.h>
 #include <WiFiManager.h>          // https://github.com/tzapu/WiFiManager
 #include <ArduinoJson.h>          // https://github.com/bblanchon/ArduinoJson
 #include <ArduinoHomeLibrary.h>   // https://github.com/arduino-home/arduino-home-library
@@ -21,6 +17,7 @@ void setup() {
 
   Runtime::registerService(new DispatcherService());
   Runtime::registerService(new ConfigurationService());
+  Runtime::registerService(new WifiNetworkService());
   Runtime::registerService(new WifiSetupService(CONFIG_PIN));
   Runtime::registerService(new HttpService());
   Runtime::registerService(new IrcService(nullptr, "#arduino-home", "rpi2-devel.mti-team2.dyndns.org")); // hub-irc.home.mti-team2.dyndns.org
